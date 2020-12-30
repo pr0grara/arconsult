@@ -1,0 +1,36 @@
+div {
+  /* border: red solid 1px; */
+}
+
+#landing {
+  display: flex;
+  align-items: center;
+}
+
+#main-photo {
+  height: 600px;
+}
+
+#welcome-message {
+  width: 800px;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+#welcome-message > p {
+  margin: 10px;
+}
+
+#sms-form {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  align-items: flex-start;
+}
+
+#stunner {
+  margin-left: 50px;
+  font-family: cursive;
+}
