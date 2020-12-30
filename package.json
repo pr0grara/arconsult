@@ -2,10 +2,10 @@
   "name": "arconsult",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
-    "start": "nodemon --exec babel-node app.js",
-    "build": "babel app.js --out-file app.compiled.js"
+    "start": "nodemon --exec babel-node server.js",
+    "build": "babel server.js --out-file server.compiled.js"
   },
   "keywords": [],
   "author": "",
