@@ -10,6 +10,6 @@ app.get("/", (req, res) => {
   res.send("welcome to the backend");
 })
 
-let port = process.env.PORT || 9000;
+let port = 9000;
 
 app.listen(port, () => console.log(`app listening on port ${port}`));
