@@ -6,7 +6,7 @@ const answers = require("./routes/api/sms");
 
 const app = express();
 
-app.use(express.static(path.join(__dirname, "frontend", "build"))); //magical shit right here dawg
+// app.use(express.static(path.join(__dirname, "frontend", "build"))); //magical shit right here dawg
 
 
 app.get("/", (req, res) => {
