@@ -11,13 +11,16 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 var answers = require("./routes/api/sms");
 
 var app = (0, _express["default"])();
-app.use(_express["default"]["static"](_path["default"].join(__dirname, "frontend", "build"))); //magical shit right here dawg
+app.use(_express["default"]["static"](_path["default"].join(__dirname, "client", "build"))); //magical shit right here dawg
 
 app.get("/", function (req, res) {
-  // res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"))
+  // res.sendFile(path.resolve(__dirname, "client", "build", "index.html"))
   res.send("welcome to the backend");
 });
 app.use("/api/sms", _sms["default"]);
+app.get("/*", function (req, res) {
+  res.sendFile(_path["default"].join(__dirname, "../client/build/index.html"));
+});
 var port = 9000;
 app.listen(port, function () {
   return console.log("app listening on port ".concat(port));
