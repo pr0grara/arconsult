@@ -10,7 +10,7 @@ class Landing extends React.Component {
   }
 
   gatherAnswers() {
-    let answers = document.querySelectorAll(".answer");
+    // let answers = document.querySelectorAll(".answer");
     this.props.sendSMS()
   }
 
