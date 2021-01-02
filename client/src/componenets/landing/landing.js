@@ -27,7 +27,7 @@ class Landing extends React.Component {
         <div id="welcome-message">
           <p>Hi 👋 , I'm Ara.</p>
           <p>
-            A born builder with a keen eye for design. Wether it is full stack
+            A born builder with a keen eye for design. Whether it is full stack
             web applications or circuit boards and sensors the medium is not so
             important as the art itself.
           </p>
