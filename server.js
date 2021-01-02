@@ -20,6 +20,6 @@ app.get("/*", (req, res) => {
   res.sendFile(path.join(__dirname, "../client/build/index.html"));
 });
 
-let port = 9000;
+const PORT = process.env.PORT || 9000;
 
-app.listen(port, () => console.log(`app listening on port ${port}`));
+app.listen(PORT, () => console.log(`app listening on port ${PORT}`));
