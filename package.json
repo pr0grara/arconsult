@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "concurrently \"nodemon --exec babel-node server.js\" \"npm start --prefix client\"",
+    "start": "nodemon --exec babel-node server.js",
     "build": "babel server.js --out-file server.compiled.js && npm run build --prefix client",
     "front": "npm start --prefix client"
   },
