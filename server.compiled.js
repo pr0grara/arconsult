@@ -17,11 +17,11 @@ app.get("/", function (req, res) {
   // res.sendFile(path.resolve(__dirname, "client", "build", "index.html"))
   res.send("welcome to the backend");
 });
-app.use("/api/sms", _sms["default"]);
-app.get("/*", function (req, res) {
-  res.sendFile(_path["default"].join(__dirname, "../client/build/index.html"));
-});
-var PORT = process.env.PORT || 9000;
+app.use("/api/sms", _sms["default"]); // app.get("/*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "../client/build/index.html"));
+// });
+
+var PORT = 9000;
 app.listen(PORT, function () {
   return console.log("app listening on port ".concat(PORT));
 });
