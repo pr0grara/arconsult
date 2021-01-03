@@ -21,7 +21,7 @@ app.use("/api/sms", _sms["default"]); // app.get("/*", (req, res) => {
 //   res.sendFile(path.join(__dirname, "../client/build/index.html"));
 // });
 
-var PORT = 9000;
+var PORT = process.env.PORT || 9000;
 app.listen(PORT, function () {
   return console.log("app listening on port ".concat(PORT));
 });
