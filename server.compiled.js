@@ -8,10 +8,7 @@ var _sms = _interopRequireDefault(require("./routes/api/sms"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-require("dotenv").config({
-  path: _path["default"].resolve(__dirname, "./.env")
-});
-
+// require("dotenv").config({ path: path.resolve(__dirname, "./.env") });
 var app = (0, _express["default"])();
 var PORT = process.env.PORT || 9000; // const PORT = 9000;
 // app.use(express.static(path.join(__dirname, "client", "build"))); //magical shit right here dawg
@@ -21,7 +18,9 @@ app.get("/", function (req, res) {
 });
 app.use("/api/sms", _sms["default"]);
 app.get("/sms/send", function () {
-  var client = require("twilio")(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
+  var client = require("twilio")( // process.env.TWILIO_ACCOUNT_SID,
+  // process.env.TWILIO_AUTH_TOKEN
+  "AC8ff169cc20879488ce03d5dbd941ff9e", "b9c0f84fbc65b1606c4c885b34ee5692");
 
   var standardMsg = "hello";
   client.messages.create({

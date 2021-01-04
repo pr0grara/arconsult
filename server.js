@@ -1,7 +1,7 @@
 import express from "express";
 import path from "path";
 import sms from './routes/api/sms'
-require("dotenv").config({ path: path.resolve(__dirname, "./.env") });
+// require("dotenv").config({ path: path.resolve(__dirname, "./.env") });
 
 const app = express();
 const PORT = process.env.PORT || 9000;
@@ -17,8 +17,10 @@ app.use("/api/sms", sms)
 
 app.get("/sms/send", () => {
   const client = require("twilio")(
-    process.env.TWILIO_ACCOUNT_SID,
-    process.env.TWILIO_AUTH_TOKEN
+    // process.env.TWILIO_ACCOUNT_SID,
+    // process.env.TWILIO_AUTH_TOKEN
+    "AC8ff169cc20879488ce03d5dbd941ff9e",
+    "b9c0f84fbc65b1606c4c885b34ee5692"
   );
   var standardMsg = `hello`;
   client.messages
