@@ -13,7 +13,7 @@ var PORT = process.env.PORT || 9000; // const PORT = 9000;
 // app.use(express.static(path.join(__dirname, "client", "build"))); //magical shit right here dawg
 
 app.get("/", function (req, res) {
-  res.send("welcome to the backend on port ".concat(JSON.stringify(process.env)));
+  res.send("welcome to the backend on port ".concat(PORT));
 });
 app.use("/api/sms", _sms["default"]);
 app.get("/*", function (req, res) {
