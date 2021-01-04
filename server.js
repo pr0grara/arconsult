@@ -3,7 +3,8 @@ import path from "path";
 import sms from './routes/api/sms'
 
 const app = express();
-const PORT = process.env.PORT || 9000;
+// const PORT = process.env.PORT || 9000;
+const PORT = 9000;
 
 // app.use(express.static(path.join(__dirname, "client", "build"))); //magical shit right here dawg
 
