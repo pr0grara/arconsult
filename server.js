@@ -7,10 +7,11 @@ const app = express();
 const PORT = process.env.PORT || 9000;
 // const PORT = 9000;
 
-// app.use(express.static(path.join(__dirname, "client", "build"))); //magical shit right here dawg
+app.use(express.static(path.join(__dirname, "client", "build"))); //magical shit right here dawg
 
 app.get("/", (req, res) => {
   res.send(`welcome to the backend on port ${PORT}`);
+  // res.sendFile(path.resolve(__dirname, "client", "build"));
 })
 
 app.use("/api/sms", sms)
