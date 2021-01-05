@@ -7,11 +7,13 @@ const app = express();
 const PORT = process.env.PORT || 9000;
 // const PORT = 9000;
 
-app.use(express.static(path.join(__dirname, "client", "build"))); //magical shit right here dawg
+// app.use(express.static(path.join(__dirname, "client", "build"))); //magical shit right here dawg
 
 app.get("/", (req, res) => {
-  res.send(`welcome to the backend on port ${PORT}`);
+  // res.send(`welcome to the backend on port ${PORT}`);
   // res.sendFile(path.resolve(__dirname, "client", "build"));
+  app.use(express.static("client/build"));
+  res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
 })
 
 app.use("/api/sms", sms)
@@ -34,9 +36,9 @@ app.get("/sms/send", () => {
     .then((message) => console.log(message.sid));
 })
 
-app.get("/*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../client/build/index.html"));
-});
+// app.get("/*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "../client/build/index.html"));
+// });
 
 
 app.listen(PORT, () => console.log(`app listening on port ${PORT}`));

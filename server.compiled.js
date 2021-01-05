@@ -11,11 +11,13 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 // require("dotenv").config({ path: path.resolve(__dirname, "./.env") });
 var app = (0, _express["default"])();
 var PORT = process.env.PORT || 9000; // const PORT = 9000;
-
-app.use(_express["default"]["static"](_path["default"].join(__dirname, "client", "build"))); //magical shit right here dawg
+// app.use(express.static(path.join(__dirname, "client", "build"))); //magical shit right here dawg
 
 app.get("/", function (req, res) {
-  res.send("welcome to the backend on port ".concat(PORT)); // res.sendFile(path.resolve(__dirname, "client", "build"));
+  // res.send(`welcome to the backend on port ${PORT}`);
+  // res.sendFile(path.resolve(__dirname, "client", "build"));
+  app.use(_express["default"]["static"]("client/build"));
+  res.sendFile(_path["default"].resolve(__dirname, "client", "build", "index.html"));
 });
 app.use("/api/sms", _sms["default"]);
 app.get("/sms/send", function () {
@@ -33,10 +35,10 @@ app.get("/sms/send", function () {
   }).then(function (message) {
     return console.log(message.sid);
   });
-});
-app.get("/*", function (req, res) {
-  res.sendFile(_path["default"].join(__dirname, "../client/build/index.html"));
-});
+}); // app.get("/*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "../client/build/index.html"));
+// });
+
 app.listen(PORT, function () {
   return console.log("app listening on port ".concat(PORT));
 });
