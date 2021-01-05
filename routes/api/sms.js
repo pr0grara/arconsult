@@ -14,7 +14,7 @@ router.get("/test", (req, res) => {
   res.json({ msg: "This is answers route" });
 });
 
-router.post("/send", (req, res) => {
+router.get("/send", (req, res) => {
   const client = require("twilio")(
     process.env.TWILIO_ACCOUNT_SID,
     process.env.TWILIO_AUTH_TOKEN
