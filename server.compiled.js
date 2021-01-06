@@ -21,9 +21,7 @@ app.get("/", function (req, res) {
 });
 app.use("/api/sms", _sms["default"]);
 app.get("/sms/send", function () {
-  var client = require("twilio")( // process.env.TWILIO_ACCOUNT_SID,
-  // process.env.TWILIO_AUTH_TOKEN
-  "AC8ff169cc20879488ce03d5dbd941ff9e", "b9c0f84fbc65b1606c4c885b34ee5692");
+  var client = require("twilio")(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
 
   var standardMsg = "hello";
   client.messages.create({

@@ -20,10 +20,8 @@ app.use("/api/sms", sms)
 
 app.get("/sms/send", () => {
   const client = require("twilio")(
-    // process.env.TWILIO_ACCOUNT_SID,
-    // process.env.TWILIO_AUTH_TOKEN
-    "AC8ff169cc20879488ce03d5dbd941ff9e",
-    "b9c0f84fbc65b1606c4c885b34ee5692"
+    process.env.TWILIO_ACCOUNT_SID,
+    process.env.TWILIO_AUTH_TOKEN
   );
   var standardMsg = `hello`;
   client.messages
