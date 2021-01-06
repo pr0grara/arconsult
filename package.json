@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon --exec babel-node server.js",
+    "start": "nodemon -r dotenv/config --exec babel-node server.js --ignore client dotenv_config_path=./.env",
     "build": "babel server.js --out-file server.compiled.js && npm run build --prefix client",
     "front": "npm start --prefix client"
   },

@@ -10,7 +10,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 
 // require("dotenv").config({ path: path.resolve(__dirname, "./.env") });
 var app = (0, _express["default"])();
-var PORT = process.env.PORT || 9000; // const PORT = 9000;
+var PORT = process.env.HTTP_PORT || 5000; // const PORT = 9000;
 // app.use(express.static(path.join(__dirname, "client", "build"))); //magical shit right here dawg
 
 app.get("/", function (req, res) {

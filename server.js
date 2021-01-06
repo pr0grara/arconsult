@@ -4,7 +4,7 @@ import sms from './routes/api/sms'
 // require("dotenv").config({ path: path.resolve(__dirname, "./.env") });
 
 const app = express();
-const PORT = process.env.PORT || 9000;
+const PORT = process.env.HTTP_PORT || 5000;
 // const PORT = 9000;
 
 // app.use(express.static(path.join(__dirname, "client", "build"))); //magical shit right here dawg
