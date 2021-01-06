@@ -20,7 +20,7 @@ app.get("/", function (req, res) {
   res.sendFile(_path["default"].resolve(__dirname, "client", "build", "index.html"));
 });
 app.use("/api/sms", _sms["default"]);
-app.get("/sms/send", function () {
+app.post("/sms/send", function (data) {
   var client = require("twilio")(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
 
   var standardMsg = "hello";

@@ -1,6 +1,7 @@
 import axios from "axios";
 
+
 export const sendSMS = (data) => {
-  // debugger
-  return axios.get(`/api/sms/send`);
+  debugger
+  return axios.post(`/api/sms/send`, data);
 };

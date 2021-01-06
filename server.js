@@ -18,7 +18,7 @@ app.get("/", (req, res) => {
 
 app.use("/api/sms", sms)
 
-app.get("/sms/send", () => {
+app.post("/sms/send", (data) => {
   const client = require("twilio")(
     process.env.TWILIO_ACCOUNT_SID,
     process.env.TWILIO_AUTH_TOKEN
