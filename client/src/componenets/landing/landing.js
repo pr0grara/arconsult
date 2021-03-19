@@ -31,19 +31,18 @@ class Landing extends React.Component {
       <div id="landing">
         <img id="main-photo" src={img} alt="landing"></img>
         <div id="welcome-message">
-          <p>Hi 👋 , I'm Ara.</p>
+          <p>Hi I'm Ara 👋</p>
           <p>
-            A born builder with a keen eye for design. Whether it is full stack
-            web applications or circuit boards and sensors the medium is not so
+            I'm a born builder, a problem solver and a professional figure-it-outer. Whether it is full stack
+            web applications or circuit boards and sensors the medium is not as
             important as the art itself.
           </p>
           <p id="stunner">Idea &rarr; Manifestation = The Art of Building</p>
           <p>
-            Do you have a project you'd like me to help with? Send me a text
-            right now
+            Do you have an idea you'd like me to help with? Send me a text if you dare
           </p>
           <div id="sms-form">
-            <label>what is your name?</label>
+            <label>name?</label>
             <input className="answer" type="text"></input>
             <label>your company?</label>
             <input className="answer" type="text"></input>
