@@ -39,5 +39,5 @@ app.post("/sms/send", function (data) {
 // });
 
 app.listen(PORT, function () {
-  return console.log("app listening on port ".concat(PORT));
+  return console.log("hey aws, app is now listening on port ".concat(PORT));
 });

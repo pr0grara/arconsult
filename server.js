@@ -38,4 +38,4 @@ app.post("/sms/send", (data) => {
 // });
 
 
-app.listen(PORT, () => console.log(`app listening on port ${PORT}`));
+app.listen(PORT, () => console.log(`hey aws, app is now listening on port ${PORT}`));
