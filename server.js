@@ -1,8 +1,7 @@
 import express from "express";
 import path from "path";
 import sms from './routes/api/sms'
-// require("dotenv").config({ path: path.resolve(__dirname, "./.env") });
-
+import {} from 'dotenv/config'
 const app = express();
 const PORT = process.env.HTTP_PORT || 5000;
 // const PORT = 9000;
