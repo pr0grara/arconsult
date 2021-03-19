@@ -8,9 +8,10 @@ var _sms = _interopRequireDefault(require("./routes/api/sms"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-// require("dotenv").config({ path: path.resolve(__dirname, "./.env") });
+require("dotenv").config();
+// console.log(process.env)
 var app = (0, _express["default"])();
-var PORT = process.env.HTTP_PORT || 5000; // const PORT = 9000;
+var PORT = process.env.PORT || 5000; // const PORT = 9000;
 // app.use(express.static(path.join(__dirname, "client", "build"))); //magical shit right here dawg
 
 app.get("/", function (req, res) {
