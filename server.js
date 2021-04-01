@@ -3,7 +3,7 @@ import path from "path";
 import sms from './routes/api/sms'
 import {} from 'dotenv/config'
 const app = express();
-const PORT = process.env.HTTP_PORT || 5000;
+const PORT = process.env.PORT || 5000;
 // const PORT = 9000;
 
 // app.use(express.static(path.join(__dirname, "client", "build"))); //magical shit right here dawg
