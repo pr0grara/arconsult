@@ -1,5 +1,5 @@
 div {
-  border: red solid 1px;
+  /* border: red solid 1px; */
 }
 
 .frame {
@@ -9,18 +9,28 @@ div {
 }
 
 #main-photo {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  opacity: .5;
-  box-shadow: 0px 70px 100px black;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  /* margin-left: auto;
+  margin-right: auto; */
+  opacity: .82;
+  box-shadow: 0px 70px 50px black;
 }
 
 #welcome-message {
-  position: relative;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  font-family: lexend;
 }
 
 #landing {
@@ -33,14 +43,16 @@ div {
 }
 
 #welcome-message {
-  /* width: 800px;
+  width: 700px;
+  height: 500px;
   font-size: 20px;
   display: flex;
-  flex-direction: column; */
+  flex-direction: column;
 }
 
 #welcome-message > p {
   margin: 10px;
+  display: block;
 }
 
 #sms-form {
