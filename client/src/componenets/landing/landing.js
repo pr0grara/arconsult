@@ -32,20 +32,20 @@ class Landing extends React.Component {
         <div className='frame'>
           <img id="main-photo" src={img} alt="landing"></img>
           <div id="welcome-message">
-            <mark><p>Hi I'm Ara 👋</p>
+            <p>Hi I'm Ara 👋</p>
             <p>
                 I'm a born builder, a problem solver and a professional figure-it-outer. Whether it is full stack
                 web applications or circuit boards and sensors the medium is not as
                 important as the art itself.
-            </p></mark>
-            <mark><p id="stunner">Idea &rarr; Manifestation = The Art of Building</p></mark>
-            <mark><p>
+            </p>
+            <p id="stunner">Idea &rarr; Manifestation = The Art of Building</p>
+            <p>
               Do you have an idea you'd like me to help with? Send me a text
-            </p></mark>
+            </p>
             <div id="sms-form">
-              <label><mark>name</mark></label>
+              <label>name</label>
               <input className="answer" type="text"></input>
-              <label><mark>mobile</mark></label>
+              <label>mobile</label>
               <input className="answer" type="text"></input>
               <label>what do you want to build?</label>
               <textarea className="answer"></textarea>
