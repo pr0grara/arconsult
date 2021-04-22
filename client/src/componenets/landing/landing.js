@@ -8,6 +8,7 @@ class Landing extends React.Component {
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.keyPress = this.keyPress.bind(this);
     this.hover = this.hover.bind(this);
     this.clearField = this.clearField.bind(this);
     this.onChange = this.onChange.bind(this);
@@ -21,13 +22,17 @@ class Landing extends React.Component {
 
   gatherAnswers() {
     let answers = document.querySelectorAll(".answer");
+    if (answers[0].value === "name" || answers[1].value === "phone or email" || answers[2].value === "msg") {
+      alert("please fill out your name, contact and a msg");
+      return false;
+    }
     let data = {
       "name": answers[0].value,
       "company": answers[1].value,
       "body": answers[2].value,
     }
-    // debugger
     this.props.sendSMS(data)
+    return true
   }
 
   async addMsgToDom(msg, idx) {
@@ -55,7 +60,7 @@ class Landing extends React.Component {
 
   async handleSubmit(e) {
     e.preventDefault();
-    this.gatherAnswers()
+    if (!this.gatherAnswers()) return;
     let smsContainer = document.querySelector("#sms-container");
     let thanks = document.querySelector('#thank-you');
     smsContainer.style.opacity = 0;
@@ -70,7 +75,13 @@ class Landing extends React.Component {
     // if (!readyToSMS(e.target)) return;
   }
 
+  keyPress(e) {
+    if (e.key !== "Enter") return;
+    this.handleSubmit(e);
+  }
+
   async componentDidMount() {
+    document.addEventListener('keydown', this.keyPress)
     let photo = document.querySelector('#main-photo');
     let background = document.querySelector('#background');
     let yes = document.querySelector('#yes-button');
@@ -79,13 +90,13 @@ class Landing extends React.Component {
     setTimeout(() => photo.style.opacity = 0, 3000); //fade photo out
     setTimeout(() => background.style.opacity = 1, 3000) //flip background color from white to black
     setTimeout(() => {
-      yes.style.opacity = 1
       yes.style.zIndex = 1
-    }, 7000) //flip background color from white to black
+      setTimeout(() => yes.style.opacity = 1, 500)
+    }, 7000) //bring yes button in
     setTimeout(() => {
       yes.style.opacity = 0
-      yes.style.zIndex = -1
-    }, 20000) //flip background color from white to black
+      setTimeout(() => yes.style.zIndex = -1, 2000)
+    }, 20000) //remove yes button
 
     for (let i = 0; i < messages.length; i++) {
       await this.addMsgToDom(messages[i], i);
@@ -153,7 +164,7 @@ class Landing extends React.Component {
           <div id='background'></div>
           <div id="thank-you">
             <div>thanks for reaching out</div>
-            <div>i'll be in touch 😁💡</div>
+            <div>i'll be in touch shortly 😁</div>
           </div>
           <img id="main-photo" src={img} alt="landing"></img>
         </div>
