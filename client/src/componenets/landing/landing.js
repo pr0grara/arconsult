@@ -85,7 +85,7 @@ class Landing extends React.Component {
     let photo = document.querySelector('#main-photo');
     let background = document.querySelector('#background');
     let yes = document.querySelector('#yes-button');
-    let messages = ["Hi, I'm Ara and I build things...", "want to talk?"]
+    let messages = ["Hi, I'm Ara", "and I build things...", "want to talk?"]
 
     setTimeout(() => photo.style.opacity = 0, 3000); //fade photo out
     setTimeout(() => background.style.opacity = 1, 3000) //flip background color from white to black

@@ -50,7 +50,7 @@ div {
   font-family: courier;
   width: 25%;
   height: 25%;
-  font-size: 20px;
+  font-size: 1em;
   display: flex;
   flex-direction: column;
   color: white;
