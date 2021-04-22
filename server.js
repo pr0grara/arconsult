@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 5000;
 // const PORT = 9000;
 
 // app.use(express.static(path.join(__dirname, "client", "build"))); //magical shit right here dawg
-
+console.log(`port number is: ${PORT}`);
 app.get("/", (req, res) => {
   // res.send(`welcome to the backend on port ${PORT}`);
   // res.sendFile(path.resolve(__dirname, "client", "build"));
