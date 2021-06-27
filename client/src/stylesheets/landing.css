@@ -97,9 +97,7 @@ div {
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 60%;
-  --width: 60%;
-  max-width: 500px;
+  height: 175px;
   left: 38%;
   bottom: 20%;
   opacity: 0;
@@ -252,6 +250,8 @@ input {
   }
 
   #sms-container {
+    width: 60%;
+    --width: 60%;
     left: calc((50% - calc(.5 * var(--width)) - var(--padding)));
     bottom: 10%;
   }

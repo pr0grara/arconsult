@@ -176,8 +176,8 @@ class Landing extends React.Component {
           </div>
           <div id='background'></div>
           <div id="thank-you">
-            <div>thanks for reaching out</div>
-            <div>i'll be in touch shortly 👍</div>
+            <div>thanks for reaching out👍</div>
+            <div>i'll be in touch shortly </div>
           </div>
           <img id="main-photo" src={img} alt="landing"></img>
         </div>
