@@ -1,0 +1,220 @@
+#root {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+div {
+  /* border: red solid 1px; */
+}
+
+.frame {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+}
+
+#main-photo {
+  position: absolute;
+  width: 70%;
+  max-width: 800px;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  /* margin-left: auto;
+  margin-right: auto; */
+  opacity: 1;
+  box-shadow: 0px 70px 50px black;
+  transition: opacity 1000ms ease-in-out;
+}
+
+#background {
+  position: absolute;
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1000ms ease-in-out;
+}
+
+#welcome-message {
+  position: absolute;
+  margin: auto;
+  top: 30%;
+  left: 30%;
+  text-align: center;
+  font-family: Roboto Mono;
+  width: 25%;
+  height: 25%;
+  font-size: 1em;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  z-index: 1;
+}
+
+#welcome-message > div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.message {
+  padding: .5rem;
+}
+
+.message5 {
+  margin-top: 2rem;
+  max-height: 100%;
+}
+
+#landing {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+#welcome-message > p {
+  margin: 10px;
+  display: block;
+}
+
+#sms-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#sms-container {
+  position: absolute;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  left: 38%;
+  top: 60%;
+  opacity: 0;
+  transition: opacity 1000ms ease-in-out;
+  z-index: 1;
+  color: white;
+  border: white 1px solid;
+  border-radius: 4px;
+  padding: 1em;
+  font-family: Roboto Mono;
+}
+
+#sms-form > div {
+  margin: .5em;
+}
+
+#sms-form > input {
+  margin: .5em;
+}
+
+.msg {
+  height: 4.5rem;
+  text-overflow: clip;
+}
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 100ms ease-in-out;
+}
+
+.fade-in.appear {
+  z-index: 2;
+  opacity: 1;
+}
+.fade-in-end {
+  opacity: 0;
+  transition: opacity 100ms ease-in-out;
+}
+
+.fade-in-end.appear {
+  z-index: 2;
+  opacity: 1;
+}
+
+#yes-button {
+  /* position: absolute; */
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  transition: all 400ms ease-in-out;
+  color: whitesmoke;
+  z-index: -1;
+  width: 3rem;
+  height: 2rem;
+  border: whitesmoke 1px solid;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-family: Roboto Mono;
+  padding: .2rem;
+}
+
+.reach-out {
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  transition: all 400ms ease-in-out;
+  color: whitesmoke;
+  z-index: -1;
+  width: 3rem;
+  height: 2rem;
+  border: whitesmoke 1px solid;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-family: Roboto Mono;
+  padding: .2rem;
+}
+
+.reach-out:hover {
+  padding: .4rem;
+}
+
+#send {
+  width: 1em;
+  height: 1em;
+  cursor: pointer;
+  margin-left: .5em;
+}
+
+textarea {
+  resize: none;
+  font: 400 13.3333px Roboto Mono;
+  margin: .5em;
+}
+
+input {
+  font: 400 13.3333px Roboto Mono;
+}
+
+#thank-you {
+  margin-top: .5rem;
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 1000ms ease-in-out;
+  padding-top: .5rem;
+  font: 400 1.5em Roboto Mono;
+}
+
+#thanks-you > div {
+  font-family: Roboto Mono;
+}
+

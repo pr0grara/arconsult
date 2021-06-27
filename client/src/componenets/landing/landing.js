@@ -32,13 +32,15 @@ class Landing extends React.Component {
       "body": answers[2].value,
     }
     this.props.sendSMS(data)
+    let welcome = document.querySelector("#welcome-message");
+    welcome.style.display = "none";
     return true
   }
 
   async addMsgToDom(msg, idx) {
     let welcome = document.querySelector('#welcome-message');
     let parent = document.createElement('div');
-    parent.classList = `.message.${idx}`;
+    parent.classList = `message message${idx}`;
     welcome.appendChild(parent);
     
     for (let i = 0; i < msg.length; i++) {
@@ -47,12 +49,23 @@ class Landing extends React.Component {
       char.classList = idx === "thanks" ? 'fade-in-end' : 'fade-in';
       parent.appendChild(char);
     }
+
+    let welcome5 = document.querySelector('.message5')
+    if (welcome5) {
+      let reachOut = document.createElement('div');
+      reachOut.classList = "reach-out";
+      reachOut.onmouseover = this.hover;
+      reachOut.onmouseleave = this.hover;
+      reachOut.onclick = this.gatherInfo;
+      reachOut.textContent = "Reach Out!"
+      welcome5.appendChild(reachOut)
+    }
   }
   
   async deployMsg(domList) {
     for (let i = 0; i < domList.length; i++) {
-      setTimeout(() => domList[i].classList.add('appear'), i * 35 + 4000);
-      setTimeout(() => domList[i].classList.remove('appear'), i * 35 + 15000);
+      setTimeout(() => domList[i].classList.add('appear'), i * 30 + 3000);
+      // setTimeout(() => domList[i].classList.remove('appear'), i * 10 + 12000);
     }
     // while (document.querySelectorAll('.appear').length > 0) {}
     // return "choop"
@@ -84,19 +97,19 @@ class Landing extends React.Component {
     document.addEventListener('keydown', this.keyPress)
     let photo = document.querySelector('#main-photo');
     let background = document.querySelector('#background');
-    let yes = document.querySelector('#yes-button');
-    let messages = ["Hi, I'm Ara", "and I build things...", "want to talk?"]
+    let messages = ["Hi, I'm Ara,", "  A full stack developer who specializes in:", "    -building, launching and maintaining websites", "    -writing webhooks", "    -structuring databases", "If you need any or all of the above feel free to "]
 
-    setTimeout(() => photo.style.opacity = 0, 3000); //fade photo out
-    setTimeout(() => background.style.opacity = 1, 3000) //flip background color from white to black
+    setTimeout(() => photo.style.opacity = 0, 1500); //fade photo out
+    setTimeout(() => background.style.opacity = 1, 2000) //flip background color from white to black
     setTimeout(() => {
+      let yes = document.querySelector('.reach-out');
       yes.style.zIndex = 1
       setTimeout(() => yes.style.opacity = 1, 500)
-    }, 7000) //bring yes button in
-    setTimeout(() => {
-      yes.style.opacity = 0
-      setTimeout(() => yes.style.zIndex = -1, 2000)
-    }, 20000) //remove yes button
+    }, 8500) //bring yes button in
+    // setTimeout(() => {
+    //   yes.style.opacity = 0
+    //   setTimeout(() => yes.style.zIndex = -1, 2000)
+    // }, 20000) //remove yes button
 
     for (let i = 0; i < messages.length; i++) {
       await this.addMsgToDom(messages[i], i);
@@ -148,7 +161,7 @@ class Landing extends React.Component {
       <div id="landing">
         <div className='frame'>
           <div id="welcome-message"></div>
-          <div id="yes-button" onMouseOver={this.hover} onMouseLeave={this.hover} onClick={this.gatherInfo}>yes</div>
+          {/* <div id="yes-button" onMouseOver={this.hover} onMouseLeave={this.hover} onClick={this.gatherInfo}>reach out!</div> */}
           <div id="sms-container">
             <div id="sms-form">
               <div>send me a free text</div>
@@ -164,7 +177,7 @@ class Landing extends React.Component {
           <div id='background'></div>
           <div id="thank-you">
             <div>thanks for reaching out</div>
-            <div>i'll be in touch shortly 😁</div>
+            <div>i'll be in touch shortly 👍</div>
           </div>
           <img id="main-photo" src={img} alt="landing"></img>
         </div>
