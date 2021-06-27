@@ -105,7 +105,7 @@ class Landing extends React.Component {
       let yes = document.querySelector('.reach-out');
       yes.style.zIndex = 1
       setTimeout(() => yes.style.opacity = 1, 500)
-    }, 8500) //bring yes button in
+    }, 9000) //bring yes button in
     // setTimeout(() => {
     //   yes.style.opacity = 0
     //   setTimeout(() => yes.style.zIndex = -1, 2000)
