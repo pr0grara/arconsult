@@ -97,7 +97,7 @@ class Landing extends React.Component {
     document.addEventListener('keydown', this.keyPress)
     let photo = document.querySelector('#main-photo');
     let background = document.querySelector('#background');
-    let messages = ["Hi, I'm Ara,", "  A full stack developer who specializes in:", "    -building, launching and maintaining websites", "    -writing webhooks", "    -structuring databases", "If you need any or all of the above feel free to "]
+    let messages = ["Hi, I'm Ara,", "  A full stack developer who specializes in:", "    -building, launching and maintaining websites", "    -writing webhooks", "    -structuring SQL and NoSQL databases", "If you need any or all of the above feel free to "]
 
     setTimeout(() => photo.style.opacity = 0, 1500); //fade photo out
     setTimeout(() => background.style.opacity = 1, 2000) //flip background color from white to black
